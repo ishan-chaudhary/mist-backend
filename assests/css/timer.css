@@ -1,0 +1,58 @@
+.timer {
+    align-items: center;
+    background-color: #35373b9e;
+    display: flex;
+  }
+  
+  .timer {
+    color: white;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .timer h1 {
+    font-weight: normal;
+    letter-spacing: .125rem;
+    text-transform: uppercase;
+  }
+  
+  .timer li {
+    display: inline-block;
+    font-size: 1.5em;
+    list-style-type: none;
+    padding: 1em;
+    text-transform: uppercase;
+  }
+  
+  .timer li span {
+    display: block;
+    font-size: 4.5rem;
+  }
+  
+  .timer .message {
+    font-size: 4rem;
+  }
+  
+  .timer #content {
+    display: none;
+    padding: 1rem;
+  }
+  
+  .timer .emoji {
+    padding: 0 .25rem;
+  }
+  
+  @media all and (max-width: 768px) {
+    .timer h1 {
+      font-size: 1.5rem;
+    }
+    
+    .timer li {
+      font-size: 1.125rem;
+      padding: .75rem;
+    }
+    
+    .timer li span {
+      font-size: 3.375rem;
+    }
+  }

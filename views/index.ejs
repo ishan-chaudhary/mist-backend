@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>MIST || IEEE-DTU</title>
+  <meta charset="utf-8">
+  <meta property="og:type" content="website" />
+  <meta property='og:title' content='Mist 2021 || IEEE DTU || STUDENT CHAPTER' />
+  <meta property='og:image' content='https://ieeedtu.in/images/ieee.png' />
+  <meta property='og:description'
+    content='IEEE DTU Student Branch , under the aegis of IEEE Global, is the oldest student branch in Delhi Section with an illustrious history of over three decades.' />
+  <meta property='og:url' content='https://ieeedtu.in/' />
+  <meta name="viewport" content="height=device-height, 
+                      width=device-width, initial-scale=1.0, 
+                      minimum-scale=1.0, maximum-scale=1.0, 
+                      user-scalable=no, target-densitydpi=device-dpi">
+  <link rel="icon" href="/images/ieee.png" type="image">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" defer
+    async>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous" async
+    defer></script>
+  <link rel="stylesheet" href="/css/mist-three.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+  <link type="text/css" rel="stylesheet" href="/css/owl.carousel.min.css">
+  <link type="text/css" rel="stylesheet" href="/css/owl.theme.default.min.css">
+  <script src="https://kit.fontawesome.com/997cc280fa.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/css/timer.css">
+</head>
+
+<body>
+  <section class="preloader">
+    <div class="preloader__wrapper">
+      <div class="preloader__circle">
+        <div class="preloader__circle-line preloader__circle-line--1"></div>
+        <div class="preloader__circle-line preloader__circle-line--2"></div>
+        <div class="preloader__circle-line preloader__circle-line--3"></div>
+        <div class="preloader__circle-line preloader__circle-line--4"></div>
+        <div class="preloader__circle-line preloader__circle-line--5"></div>
+        <div class="preloader__circle-line preloader__circle-line--6"></div>
+        <div class="preloader__circle-line preloader__circle-line--7"></div>
+        <div class="preloader__circle-line preloader__circle-line--8"></div>
+        <div class="preloader__circle-line preloader__circle-line--9"></div>
+      </div>
+    </div>
+  </section>
+  <div class="firefly"></div>
+  <div class="firefly"></div>
+  <div class="firefly"></div>
+  <div class="firefly"></div>
+  <div class="firefly"></div>
+  <div class="firefly"></div>
+  <div class="firefly"></div>
+  <div class="firefly"></div>
+  <div class="firefly"></div>
+  <div class="firefly"></div>
+  <div class="firefly"></div>
+  <div class="firefly"></div>
+  <div class="firefly"></div>
+  <div class="firefly"></div>
+  <div class="firefly"></div>
+  <div class="container-fluid">
+    <div class="row">
+      <nav class="navbar navbar-expand-lg navbar-light sticky-top bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#" style="color: white;">Mist</a>
+          <% if(!locals.user) {%>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#about" style="color: white;">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/auth/google" style="color: white;">Quiz</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#contact" style="color: white;">Contact</a>
+                </li>
+              </ul>
+            </div>
+            <%}%>
+              <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                  <% if(locals.user && locals.user.role==='admin' ) {%>
+                    <li class="nav-item m-3">
+                      <a class="btn btn-primary justify-content-end" href="/user/editTable">Edit User</a>
+                    </li>
+                    <li class="nav-item m-3">
+                      <a class="btn btn-primary justify-content-end" href="/editTable">Edit Questions</a>
+                    </li>
+                    <%}%>
+                      <li class="nav-item m-3">
+                        <a class="btn btn-outline-success justify-content-end" href="/leaderboard">Leaderboard</a>
+                      </li>
+                      <% if(locals.user){ %>
+                        <li class="nav-item">
+                          <h6 style="color: white;">
+                            <%= locals.user.name %>
+                          </h6>
+                          <a class="nav-link" href="/logout" style="color: white;">Log Out</a>
+                        </li>
+                        <% } %>
+                </ul>
+              </div>
+              <% if(! locals.user){ %>
+                <a class="nav-link" href="/auth/google" style="color: white;"><img class="g-logo"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/157px-Google_%22G%22_Logo.svg.png"
+                    alt="Google Logo" style="height: 25px;width: 25px;"></a>
+                <% } %>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="" role="button"><i class="fa fa-bars" aria-hidden="true"
+                        style="color:#e6e6ff"></i></span>
+                  </button>
+        </div>
+      </nav>
+    </div>
+    <% if(!locals.user) {%>
+      <div class="row" style="height: 80vh;background-color: transparent;">
+        <div class="hero-text">
+          <div class="text">
+            <span>M</span><span>I</span><span>S</span><span>T</span>&nbsp; &nbsp; &nbsp;
+            &nbsp;<span>2</span><span>0</span><span>2</span><span>1</span>
+          </div>
+          <h1>
+            It was <span class="typer" id="some-id" data-words="dark.,stormy.,night." data-delay="100"
+              data-colors="#08605F,#177E89,purple">
+            </span>
+            <span style="font-size:1.2em;vertical-align:middle;" class="cursor" data-cursorDisplay="|"
+              data-owner="some-id"></span>
+          </h1>
+          <h1>
+            <a href="/auth/google" style="color: white; text-decoration: none;"><i class="far fa-play-circle"></i> &nbsp
+              Lets Begin</a>
+          </h1>
+        </div>
+      </div>
+      <div class="row timer">
+        <h1 id="headline">Countdown to MIST-2021:</h1>
+        <div id="countdown">
+          <ul>
+            <li><span id="days"></span>days</li>
+            <li><span id="hours"></span>Hours</li>
+            <li><span id="minutes"></span>Minutes</li>
+            <li><span id="seconds"></span>Seconds</li>
+          </ul>
+        </div>
+      </div>
+  </div>
+  <div class="row" style="margin-top:30vh;" id="about">
+    <div class="card mb-3 offset-md-2 col-md-8" style="background-color: transparent;color: white;">
+      <div class="row g-0">
+        <div class="col-md-4"
+          style="background-image: url(/images/IEEE_DTU_Logo_Transparent_White.png);background-repeat: no-repeat;background-size: contain;">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h1 class="card-title" style="color: red;">Mist</h1>
+            <p class="card-text">Mist is a cryptic hunt organised by IEEE-DTU.
+            </p>
+            <p>
+              A cryptic hunt is an online multiplayer event that involves players having to follow a trail of leads and
+              clues to get to a question's answer. These answers aren't directly available on the internet, and each
+              question generally takes a great deal of patience and mental prowess to solve.
+            </p>
+            <p>Join our Discord server! It's the place where we will be dealing with your queries.</p>
+            <a href="https://discord.gg/ycTMaHuwS7" style="color: white;" target="_blank">
+              <h1><i class="fab fa-discord"></i></h1>
+            </a>
+            <p>Hints will be released on our facebook page.<a href="https://www.facebook.com/mist.troika"
+                style="color: white;" target="_blank">
+                <h1><i class="fab fa-facebook"></i></h1>
+              </a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% } %>
+    <div class="row align-items-center m-lg-5" id="quiz">
+      <div class="col-lg-8 col-sm-12  offset-lg-2">
+        <% if(locals.user) {%>
+          <h6 style="color: white;" class="mt-5">
+            <p>Join our Discord server! It's the place where we will be dealing with your queries.</p>
+          </h6>
+          <a href="https://discord.gg/ycTMaHuwS7" target="_blank" style="color: white;">
+            <h1><i class="fab fa-discord"></i></h1>
+          </a>
+          <p style="color: white;">Hints will be released on our facebook page.<a
+              href="https://www.facebook.com/mist.troika" style="color: white;" target="_blank">
+              <h1><i class="fab fa-facebook"></i></h1>
+            </a></p>
+          <% if(questions.length==0) {%>
+            <img src="/images/coming soon.jpg" style="max-width: 100%;">
+            <%}else if(locals.user.levelUnlocked > totalQuestions){ %>
+              <img src="/images/end.jpg" style="width: 100%;">
+              <%}else{%>
+                <div id="owl-demo" class="owl-carousel owl-theme">
+                  <% for(let i=0;i < questions.length; i++){ %>
+                    <div class="item" style="color: white;">
+                      <div class="mt-3">
+                        <h5>Question No. : <%= questions.length - i %>
+                        </h5>
+                      </div>
+                      <div>
+                        <a href="<%= questions[i].hint %>" target="_blank"><img src="/images/hint.png"
+                            style="position: absolute; z-index: 5; height: 50px; width: 50px;"></a>
+                        <img src="<%= questions[i].content %>">
+                      </div>
+                      <% if(questions[i].level===locals.user.levelUnlocked) { %>
+                        <form method="POST" action="/answer/<%= questions[i]._id %>" id="answer-form">
+                          <% } else {%>
+                            <form method="POST" action="">
+                              <%}%>
+                                <div class="mb-3">
+                                  <label for="exampleInputEmail1" class="form-label"
+                                    style="color: white;">Answer</label>
+                                  <% if( questions[i].level===locals.user.levelUnlocked ) { %>
+                                    <input type="text" name="answer" class="form-control" id="exampleInputEmail1"
+                                      aria-describedby="emailHelp">
+                                    <%}else{%>
+                                      <input type="text" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp" disabled placeholder="<%= questions[i].answer %>">
+                                      <%}%>
+                                </div>
+                                <% if(questions[i].level===locals.user.levelUnlocked) { %>
+                                  <button type="submit" class="btn btn-primary">Submit</button>
+                                  <%}%>
+                            </form>
+                    </div>
+                    <% } %>
+                </div>
+                <% } %>
+                  <% } %>
+      </div>
+      <div class="col-lg-4 col-sm-12  offset-lg-4">
+        <div id="owl-demo-2" class="owl-carousel owl-theme mt-5 mb-3">
+          <% memes.forEach( function (meme){ %>
+            <div class="item">
+              <div><img src="/images/memes/<%= meme %>" alt="GTA V"></div>
+            </div>
+            <% }) %>
+        </div>
+      </div>
+    </div>
+    </div>
+    <footer class="ftco-footer ftco-section text-light bg-dark" id="contact">
+      <div class="row">
+        <div class="col-md-2">
+          <div class="ftco-footer-widget mb-4">
+            <h2 class="ftco-heading-2">IEEE-DTU</h2>
+            <ul class=" list-unstyled d-flex flex-row justify-content-evenly mt-3">
+              <li class="ftco-animate"><a href="https://twitter.com/dtu_ieee?lang=en" class=" text-light"
+                  target="_blank"><i class="fab fa-twitter"></i></a></li>
+              <li class="ftco-animate"><a href="https://www.facebook.com/mist.troika" class=" text-light"
+                  target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+              <li class="ftco-animate">
+                <a href="https://www.instagram.com/ieee.dtu/" class=" text-light" target="_blank"><i
+                    class="fab fa-instagram"></i></a>
+              </li>
+              <li class="ftco-animate"><a href="https://ieeedtu.in/index.html" class=" text-light" target="_blank"><i
+                    class="fas fa-street-view"></i></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md">
+          <div class="ftco-footer-widget mb-4 ml-md-4">
+          </div>
+        </div>
+        <div class="col-md">
+          <div class="ftco-footer-widget mb-4">
+            <h2 class="ftco-heading-2">Have a Question?</h2>
+            <div class="block-23 mb-3">
+              <ul>
+                <li><span class="icon icon-map-marker"></span><span class="text" style="color: white;">Delhi
+                    Technological
+                    University,
+                    Shahbad Daulatpur,
+                    Main Bawana Road,
+                    Delhi-110042,
+                    India</span></li>
+                <li><a href="#" class="text-decoration-none"><span class="icon icon-phone"></span><span
+                      class="text-light text-decoration-none">7065783844 , 9873388660 , 9205257150</span></a></li>
+                <li><a href="#" class="text-decoration-none"><span class="icon icon-envelope"></span><span
+                      class="text-light ">ieeedtu.contact@gmail.com</span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 text-center">
+          Copyright &copy;
+          <script>document.write(new Date().getFullYear());</script> All rights reserved | IEEE-DTU
+        </div>
+      </div>
+    </footer>
+    </div>
+    <!-- scripts -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script async src="https://unpkg.com/typer-dot-js@0.1.0/typer.js"></script>
+    <script>
+  <% if (flash.success && flash.success.length > 0) {%>
+        new Noty({
+          theme: 'relax',
+          text: "<%= flash.success %>",
+          type: 'success',
+          layout: 'topRight',
+          timeout: 3000
+        }).show();
+      <%} %>    
+        <% if (flash.error && flash.error.length > 0) {%>
+        new Noty({
+          theme: 'relax',
+          text: "<%= flash.error %>",
+          type: 'error',
+          layout: 'topRight',
+          timeout: 3000
+        }).show();
+            <%} %>
+    </script>
+    <script>
+
+
+        $(document).ready(function () {
+          $("#owl-demo").owlCarousel({
+
+            navigation: true, // Show next and prev buttons
+            navigationText: true,
+            slideSpeed: false,
+            paginationSpeed: false,
+
+            items: 1,
+            itemsDesktop: false,
+            itemsDesktopSmall: false,
+            itemsTablet: false,
+            itemsMobile: false,
+            paginationNumbers: true
+          });
+          $("#owl-demo-2").owlCarousel({
+            pagination: false,
+            dots: false,
+            loop: true,
+            autoplay: true,
+            items: 1,
+            itemsDesktop: false,
+            itemsDesktopSmall: false,
+            itemsTablet: false,
+            itemsMobile: false,
+          });
+        });
+    </script>
+    <script type="text/javascript">
+      var frm = $('#answer-form');
+      frm.submit(function (e) {
+        e.preventDefault();
+        $.ajax({
+          type: frm.attr('method'),
+          url: frm.attr('action'),
+          data: frm.serialize(),
+          success: function (data) {
+            if (data.isCorrect) {
+              new Noty({
+                theme: 'metroui',
+                text: `${data.message}`,
+                type: 'success',
+                layout: 'center',
+                timeout: 2500,
+                modal: true,
+                closeWith: ['click']
+              }).show();
+              setInterval(() => {
+                location.reload()
+              }, 2800)
+            } else {
+              new Noty({
+                theme: 'metroui',
+                text: `${data.message}`,
+                type: 'error',
+                layout: 'center',
+                timeout: 2500,
+                modal: true,
+                closeWith: ['click']
+              }).show();
+            }
+          },
+          error: function (data) {
+            console.log('An error occurred.');
+            console.log(data);
+            new Noty({
+              theme: 'metroui',
+              text: `You have been disqualified !`,
+              type: 'error',
+              layout: 'center',
+              timeout: 2500,
+              modal: true,
+              closeWith: ['click']
+            }).show();
+          },
+        });
+      });
+    </script>
+    <% if(!locals.user) { %>
+      <script src="/js/countdown.js"></script>
+      <%}%>
+        <script>
+          $(window).on('load', function () {
+
+            $(".preloader").delay(500).fadeOut();
+          });
+        </script>
+</body>
+
+</html>
